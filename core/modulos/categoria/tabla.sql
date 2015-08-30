@@ -1,0 +1,9 @@
+CREATE TABLE `categoria` ( 
+	`id` INT(15) NOT NULL PRIMARY KEY AUTO_INCREMENT , 
+	`titulo` VARCHAR(255) NOT NULL , 
+	`padre` INT(15) NOT NULL , 
+	`estatus` INT(1) NOT NULL 
+	) ENGINE = InnoDB;
+
+ALTER TABLE categoria ADD CONSTRAINT categoria_padre FOREIGN KEY (padre) 
+REFERENCES categoria (id) ON DELETE NO ACTION ON UPDATE NO ACTION ;
